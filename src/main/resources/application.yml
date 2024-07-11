@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: send-email
+  rabbitmq:
+    addresses: ${RABBIT_URL}
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_EMAIL}
+    password: ${SMTP_SENHA}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+broker:
+  queue:
+    send:
+      email:
+        name: default.send.email
